@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWaiver.Net", "SmartWaiver.Net\SmartWaiver.Net.csproj", "{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWaiver.Net.Console", "SmartWaiver.Net.Console\SmartWaiver.Net.Console.csproj", "{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F30B33-0CCC-4264-8910-8064EB9F42B8}
+	EndGlobalSection
+EndGlobal
