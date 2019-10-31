@@ -16,17 +16,23 @@ namespace SmartWaiver.Net
         }
 
         /// <summary>
-        /// 
+        /// This API call will return the SignedWaiver object.  Can pass
+        /// includePdf = true in order to get a byte[] array of
+        /// PDF data.
         /// </summary>
         /// <param name="waiverId"></param>
-        /// <param name="includePdfs"></param>
+        /// <param name="includePdf"></param>
         /// <returns></returns>
-        public SignedWaiver GetSignedWaiver(string waiverId, bool includePdfs = false)
+        public SignedWaiver GetSignedWaiver(string waiverId, bool includePdf = false)
         {
             var client = new RestClient(_apiBase);
             var request = new RestRequest("v4/waivers/{id}", Method.GET);
             request.AddUrlSegment("id", waiverId);
-            request.AddParameter("pdf", "true");
+
+            if (includePdf)
+            {
+                request.AddParameter("pdf", "true");
+            }
             
             // Set the API Key Header
             request.AddHeader("sw-api-key", _apiKey);
@@ -39,7 +45,9 @@ namespace SmartWaiver.Net
         }
 
         /// <summary>
-        /// 
+        /// This is a helper method for creating a tagged URL.  This allows
+        /// you to pass in custom customer data into the Smart Waiver system
+        /// to map waivers to objects on the application side.
         /// </summary>
         /// <param name="waiverId"></param>
         /// <param name="tag"></param>
