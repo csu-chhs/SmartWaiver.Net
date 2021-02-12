@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartWaiver.Net", "SmartWaiver.Net\SmartWaiver.Net.csproj", "{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartWaiver.Net.Console", "SmartWaiver.Net.Console\SmartWaiver.Net.Console.csproj", "{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWaiver.Net.Tests", "SmartWaiver.Net.Tests\SmartWaiver.Net.Tests.csproj", "{0224E856-F8C1-48CB-8975-9387174E4981}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{480AA517-03CE-4CD2-AA32-CA431EBEC0A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B08EFF5A-A01E-42AB-B335-4DAC9F61AB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0224E856-F8C1-48CB-8975-9387174E4981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0224E856-F8C1-48CB-8975-9387174E4981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0224E856-F8C1-48CB-8975-9387174E4981}.Release|Any CPU.ActiveCfg = Release|Any CPU
