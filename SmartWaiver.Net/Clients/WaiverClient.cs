@@ -1,10 +1,8 @@
-using System;
 using SmartWaiver.Net.Interfaces;
 using RestSharp;
 using SmartWaiver.Net.Objects;
 using SmartWaiver.Net.Exceptions;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace SmartWaiver.Net.Clients
 {
