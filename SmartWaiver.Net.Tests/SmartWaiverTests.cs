@@ -10,7 +10,7 @@ namespace SmartWaiver.Net.Tests
             string waiverGUID = "4fc7d12601941";
             string autoTag = "1234";
 
-            SmartWaiver smartWaiver = new SmartWaiver("laskdfj");
+            ISmartWaiver smartWaiver = new SmartWaiver("laskdfj");
 
             Assert.Equal("https://waiver.smartwaiver.com/auto/?auto_waiverid=4fc7d12601941&auto_tag=1234",
                 smartWaiver.GetAutoTaggedWaiverUrl(waiverGUID, autoTag));
@@ -22,7 +22,7 @@ namespace SmartWaiver.Net.Tests
             string waiverGUID = "4fc7d12601941";
             string autoTag = "1234";
 
-            SmartWaiver smartWaiver = new SmartWaiver("laskdfj");
+            ISmartWaiver smartWaiver = new SmartWaiver("laskdfj");
 
             Assert.Equal("https://waiver.smartwaiver.com/auto/?auto_waiverid=4fc7d12601941&auto_tag=1234",
                 smartWaiver.Waiver.GetAutoTaggedWaiverUrl(waiverGUID, autoTag));
