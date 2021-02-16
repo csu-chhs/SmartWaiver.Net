@@ -16,9 +16,6 @@ jobs:
     - name: Setup NuGet.exe for use with actions
       uses: NuGet/setup-nuget@v1.0.5
         
-    - name: Setup NuGet Sources
-      run: nuget sources add -Name "GitHub" -source https://nuget.pkg.github.com/csu-chhs/index.json -StorePasswordInClearText -username dstegelman -password "${{ secrets.DEREK_TOKEN }}"
-
     - name: Restore
       run: nuget restore
     
