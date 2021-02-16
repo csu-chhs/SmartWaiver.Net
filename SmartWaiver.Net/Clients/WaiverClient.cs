@@ -32,15 +32,16 @@ namespace SmartWaiver.Net.Clients
             {
                 request.AddParameter("pdf", "true");
             }
-            
+
             var response = _client.Execute<SignedWaiver>(request);
-            
-            if(response.IsSuccessful)
+
+            if (response.IsSuccessful)
             {
                 return response.Data;
             }
 
-            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}");
+            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
+                response.ErrorException);
         }
 
         public async Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false)
@@ -60,7 +61,8 @@ namespace SmartWaiver.Net.Clients
                 return response.Data;
             }
 
-            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}");
+            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
+                response.ErrorException);
         }
     }
 }
