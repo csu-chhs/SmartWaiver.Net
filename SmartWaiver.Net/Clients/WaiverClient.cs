@@ -25,7 +25,7 @@ namespace SmartWaiver.Net.Clients
 
         public SignedWaiver GetSignedWaiver(string waiverId, bool includePdf = false)
         {
-            var request = new RestRequest("v4/waivers/{id}", Method.GET);
+            var request = new RestRequest("v4/waivers/{id}");
             request.AddUrlSegment("id", waiverId);
 
             if (includePdf)
@@ -33,7 +33,7 @@ namespace SmartWaiver.Net.Clients
                 request.AddParameter("pdf", "true");
             }
 
-            var response = _client.Execute<SignedWaiver>(request);
+            var response = _client.ExecuteAsync<SignedWaiver>(request).Result;
 
             if (response.IsSuccessful)
             {
@@ -46,7 +46,7 @@ namespace SmartWaiver.Net.Clients
 
         public async Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false)
         {
-            var request = new RestRequest("v4/waivers/{id}", Method.GET);
+            var request = new RestRequest("v4/waivers/{id}");
             request.AddUrlSegment("id", waiverId);
 
             if (includePdf)
