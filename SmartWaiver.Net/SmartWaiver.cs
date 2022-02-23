@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using RestSharp.Serializers.NewtonsoftJson;
 using SmartWaiver.Net.Interfaces;
 using SmartWaiver.Net.Clients;
 
@@ -17,6 +18,7 @@ namespace SmartWaiver.Net
             _apiKey = apiKey;
             var client = new RestClient(_apiBase);
             client.AddDefaultHeader("sw-api-key", _apiKey);
+            client.UseNewtonsoftJson();
             Waiver = new WaiverClient(client, _waiverBase);
         }
     }
