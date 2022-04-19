@@ -2,7 +2,6 @@ using SmartWaiver.Net.Interfaces;
 using RestSharp;
 using SmartWaiver.Net.Objects;
 using SmartWaiver.Net.Exceptions;
-using System.Threading.Tasks;
 
 namespace SmartWaiver.Net.Clients
 {
@@ -40,8 +39,11 @@ namespace SmartWaiver.Net.Clients
                 return response.Data;
             }
 
-            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
                 response.ErrorException);
+            ex.Data.Add("Waiver Id", waiverId);
+            ex.AddWebTrace(response.Content);
+            throw ex;
         }
 
         public async Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false)
@@ -61,8 +63,11 @@ namespace SmartWaiver.Net.Clients
                 return response.Data;
             }
 
-            throw new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
                 response.ErrorException);
+            ex.Data.Add("Waiver Id", waiverId);
+            ex.AddWebTrace(response.Content);
+            throw ex;
         }
     }
 }

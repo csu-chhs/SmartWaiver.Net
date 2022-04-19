@@ -9,7 +9,7 @@
     <PackageId>SmartWaiver.Net</PackageId>
     <PackageDescription>Smart Waiver Client Library</PackageDescription>
     <RepositoryUrl>https://github.com/csu-chhs/SmartWaiver.Net</RepositoryUrl>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 

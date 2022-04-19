@@ -18,5 +18,10 @@ namespace SmartWaiver.Net.Exceptions
         {
             
         }
+
+        public void AddWebTrace(string webStackTrace)
+        {
+            Data.Add("Web API Response", webStackTrace);
+        }
     }
 }
