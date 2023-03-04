@@ -2,9 +2,9 @@
 
 namespace SmartWaiver.Net.Objects
 {
-    public class SignedWaiver
+    public class SignedWaivers
     {
-        public SignedWaiver()
+        public SignedWaivers()
         {
 
         }
@@ -14,7 +14,7 @@ namespace SmartWaiver.Net.Objects
         public string Version { get; set; }
         public string Type { get; set; }
 
-        public Waiver Waiver { get; set; }
+        public List<Waiver> Waivers { get; set; }
 
     }
 }

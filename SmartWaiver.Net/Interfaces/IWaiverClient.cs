@@ -23,7 +23,7 @@ namespace SmartWaiver.Net.Interfaces
         /// <param name="waiverId"></param>
         /// <param name="includePdf"></param>
         /// <returns></returns>
-        Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false);
+        SignedWaivers GetSignedWaivers(int? limit = null, bool? verified = null, string? templateId = null, DateTime? fromDts = null, DateTime? toDts = null, string? firstName = null, string? lastName = null, string? tag = null);
 
         /// <summary>
         /// This is a helper method for creating a tagged URL.  This allows
