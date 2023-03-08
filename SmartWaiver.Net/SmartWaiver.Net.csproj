@@ -11,11 +11,15 @@
     <RepositoryUrl>https://github.com/csu-chhs/SmartWaiver.Net</RepositoryUrl>
     <Version>1.1.4</Version>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="108.0.3" />
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="108.0.3"/>
   </ItemGroup>
+	<ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>
