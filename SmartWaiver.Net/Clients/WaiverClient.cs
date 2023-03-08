@@ -46,7 +46,89 @@ namespace SmartWaiver.Net.Clients
             throw ex;
         }
 
-        public async Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false)
+        public SignedWaivers GetSignedWaivers(int? limit = null, bool? verified = null, string templateId = null, DateTime? fromDts = null, DateTime? toDts = null, string firstName = null, string lastName = null, string tag = null)
+        {
+            var request = new RestRequest("v4/waivers");
+
+            if (limit != null)
+            {
+                request.AddParameter("limit", limit.ToString());
+            }
+            if (verified != null)
+            {
+                request.AddParameter("verified", verified.ToString().ToLower());
+            }
+            if (templateId != null)
+            {
+                request.AddParameter("templateId", templateId.ToString().ToLower());
+            }
+            if (fromDts != null)
+            {
+                request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+            }
+            if (toDts != null)
+            {
+                request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+            }
+            if (firstName != null)
+            {
+                request.AddParameter("firstName", firstName);
+            }
+            if (lastName != null)
+            {
+                request.AddParameter("lastName", lastName);
+            }
+            if (tag != null)
+            {
+                request.AddParameter("tag", tag);
+            }
+
+            var response = _client.ExecuteAsync<SignedWaivers>(request).Result;
+
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver list", response.ErrorException);
+            if (limit != null)
+            {
+                ex.Data.Add("limit", limit);
+            }
+            if (verified != null)
+            {
+                ex.Data.Add("verified", verified);
+            }
+            if (templateId != null)
+            {
+                ex.Data.Add("templateId", templateId);
+            }
+            if (fromDts != null)
+            {
+                ex.Data.Add("fromDts", fromDts);
+            }
+            if (toDts != null)
+            {
+                ex.Data.Add("toDts", toDts);
+            }
+            if (firstName != null)
+            {
+                ex.Data.Add("firstName", firstName);
+            }
+            if (lastName != null)
+            {
+                ex.Data.Add("lastName", lastName);
+            }
+            if (tag != null)
+            {
+                ex.Data.Add("tag", tag);
+            }
+
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
+
+        public async Task<SignedWaiver> GetSignedWaiverAsync(string waiverId, bool includePdf = false)
         {
             var request = new RestRequest("v4/waivers/{id}");
             request.AddUrlSegment("id", waiverId);
@@ -55,9 +137,9 @@ namespace SmartWaiver.Net.Clients
             {
                 request.AddParameter("pdf", "true");
             }
-            
+
             var response = await _client.ExecuteAsync<SignedWaiver>(request);
-            
+
             if(response.IsSuccessful)
             {
                 return response.Data;

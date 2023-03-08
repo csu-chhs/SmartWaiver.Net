@@ -23,7 +23,23 @@ namespace SmartWaiver.Net.Interfaces
         /// <param name="waiverId"></param>
         /// <param name="includePdf"></param>
         /// <returns></returns>
-        Task<SignedWaiver> GetSignWaiverAsync(string waiverId, bool includePdf = false);
+        Task<SignedWaiver> GetSignedWaiverAsync(string waiverId, bool includePdf = false);
+
+        /// <summary>
+        /// This API call will return a SignedWaivers object.  
+        /// Which contains a list of SignedWaiver objects
+        /// PDF data.
+        /// </summary>
+        /// <param name="limit">Max number of waivers to return. Default: 20 Max: 300 (Optional)</param>
+        /// <param name="verified">Limit selection to waiver that have been verified or not (Optional)</param>
+        /// <param name="templateId">Limit selection to signed waivers of the given template ID (Optional)</param>
+        /// <param name="fromDts">Show only waivers signed between given dates (Requires 'toDts' parameter). Must be in ISO 8601 format (Optional)</param>
+        /// <param name="toDts">Show only waivers signed between given dates (Requires 'fromDts' parameter). Must be in ISO 8601 format (Optional)</param>
+        /// <param name="firstName">Limit to waivers with a participant having this First Name (Case Insensitive) (Optional)</param>
+        /// <param name="lastName">Limit to waivers with a participant having this Last Name (Case Insensitive) (Optional)</param>
+        /// <param name="tag">Limit to waivers with a participant having this as their primary tag (Optional)</param>
+        /// <returns></returns>
+        SignedWaivers GetSignedWaivers(int? limit = null, bool? verified = null, string templateId = null, DateTime? fromDts = null, DateTime? toDts = null, string firstName = null, string lastName = null, string tag = null);
 
         /// <summary>
         /// This is a helper method for creating a tagged URL.  This allows
