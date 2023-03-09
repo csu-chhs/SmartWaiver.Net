@@ -44,10 +44,10 @@ namespace SmartWaiver.Net.Objects
         public string EmergencyContactPhone { get; set; }
         public string InsuranceCarrier { get; set; }
         public string InsurancePolicyNumber { get; set; }
-        public string DriversLicenceNumber { get; set; }
-        public string DriversLicenceState { get; set; }
+        public string DriversLicenseNumber { get; set; }
+        public string DriversLicenseState { get; set; }
         public string ClientIp { get; set; }
         public int Photos { get; set; }
-        public string PDF { get; set; }
+        public byte[] Pdf { get; set; }
     }
 }
