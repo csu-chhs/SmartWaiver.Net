@@ -145,11 +145,11 @@ namespace SmartWaiver.Net.Objects
         /// <summary>
         ///  The number of the drivers license
         /// </summary>
-        public string DriversLicenceNumber { get; set; }
+        public string DriversLicenseNumber { get; set; }
         /// <summary>
         /// The state of the drivers license
         /// </summary>
-        public string DriversLicenceState { get; set; }
+        public string DriversLicenseState { get; set; }
         /// <summary>
         /// P Address from which the waiver was submitted
         /// </summary>
@@ -161,6 +161,8 @@ namespace SmartWaiver.Net.Objects
         /// <summary>
         /// A Base 64 encoded string of the PDF document
         /// </summary>
-        public string PDF { get; set; }
+
+        public byte[] Pdf { get; set; }
+
     }
 }
