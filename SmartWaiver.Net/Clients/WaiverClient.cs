@@ -60,15 +60,15 @@ namespace SmartWaiver.Net.Clients
             }
             if (templateId != null)
             {
-                request.AddParameter("templateId", templateId.ToString().ToLower());
+                request.AddParameter("templateId", templateId);
             }
             if (fromDts != null)
             {
-                request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+                request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
             }
             if (toDts != null)
             {
-                request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+                request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
             }
             if (firstName != null)
             {
