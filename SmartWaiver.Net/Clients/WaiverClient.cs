@@ -151,5 +151,49 @@ namespace SmartWaiver.Net.Clients
             ex.AddWebTrace(response.Content);
             throw ex;
         }
+
+        public WaiverCheckins GetWaiverCheckins(DateTime fromDts, DateTime toDts, int? limit = null, int? offset = null)
+        {
+            var request = new RestRequest("v4/checkins");
+
+            request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
+            if(toDts.Date == DateTime.Today && toDts.TimeOfDay == TimeSpan.MinValue)
+            {
+                toDts = toDts.AddHours(DateTime.Now.Hour);
+            }
+            request.AddParameter("toDts", ((DateTime) toDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
+            if (limit != null)
+            {
+                request.AddParameter("limit", limit.ToString());
+            }
+            if (offset != null)
+            {
+                request.AddParameter("offset", offset.ToString());
+            }
+
+            var response = _client.ExecuteAsync<WaiverCheckins>(request).Result;
+
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver list", response.ErrorException);
+
+            ex.Data.Add("fromDts",fromDts);
+            ex.Data.Add("toDts", fromDts);
+
+            if (limit != null)
+            {
+                ex.Data.Add("limit", limit);
+            }
+            if (offset != null)
+            {
+                ex.Data.Add("offset", offset);
+            }
+
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
     }
 }

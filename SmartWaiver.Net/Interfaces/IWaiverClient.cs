@@ -1,4 +1,5 @@
 using SmartWaiver.Net.Objects;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SmartWaiver.Net.Interfaces
@@ -50,5 +51,15 @@ namespace SmartWaiver.Net.Interfaces
         /// <param name="tag"></param>
         /// <returns></returns>
         string GetAutoTaggedWaiverUrl(string waiverId, string tag);
+
+        /// <summary>
+        /// List checkins for waivers
+        /// </summary>
+        /// <param name="fromDts">Limit to checkins after this date(Must not be within the current hour) (If not provided time will default to 00:00:00).</param>
+        /// <param name="toDts">Limit to checkins before this date (Must not be within the current hour) (If not provided time will default to 00:00:00).</param>
+        /// <param name="limit">Limit to this number of checkins. Default value: 20 Allowed values: 1-100</param>
+        /// <param name="offset">Offset to be combined with limit to page results.Default value: 0 Allowed values 0-1000</param>
+        /// <returns></returns>
+        WaiverCheckins GetWaiverCheckins(DateTime fromDts, DateTime toDts, int? limit = null, int? offset = null);
     }
 }
