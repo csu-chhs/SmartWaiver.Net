@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-
-namespace SmartWaiver.Net.Objects
+﻿namespace SmartWaiver.Net.Objects
 {
     public class Waiver
     {
@@ -162,7 +158,7 @@ namespace SmartWaiver.Net.Objects
         /// A Base 64 encoded string of the PDF document
         /// </summary>
 
-        public byte[] Pdf { get; set; }
+        public string Pdf { get; set; }
 
     }
 }
