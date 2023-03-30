@@ -84,7 +84,7 @@
         /// <summary>
         /// Any custom waiver fields on the waiver
         /// </summary>
-        public Dictionary<string, CustomWaiverField> CustomerWaiverFields { get; set; }
+        public Dictionary<string, GUID> CustomWaiverFields { get; set; }
         /// <summary>
         /// If there are only minors on the waiver, this field contains the guardian information, otherwise it will be null
         /// </summary>
@@ -158,7 +158,7 @@
         /// A Base 64 encoded string of the PDF document
         /// </summary>
 
-        public string Pdf { get; set; }
+        public byte[] Pdf { get; set; }
 
     }
 }
