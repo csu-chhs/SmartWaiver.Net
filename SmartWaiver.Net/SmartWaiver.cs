@@ -17,9 +17,9 @@ namespace SmartWaiver.Net
         public SmartWaiver(string apiKey)
         {
             _apiKey = apiKey;
-            var client = new RestClient(_apiBase);
+            var client = new RestClient(_apiBase,
+                configureSerialization: s => s.UseNewtonsoftJson());
             client.AddDefaultHeader("sw-api-key", _apiKey);
-            client.UseNewtonsoftJson();
             Waiver = new WaiverClient(client, _waiverBase);
             Template = new TemplateClient(client);
         }
