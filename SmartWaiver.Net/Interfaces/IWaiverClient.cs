@@ -1,6 +1,4 @@
 using SmartWaiver.Net.Objects;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace SmartWaiver.Net.Interfaces
 {
