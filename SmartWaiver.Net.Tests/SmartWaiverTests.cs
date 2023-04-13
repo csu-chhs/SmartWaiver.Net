@@ -20,7 +20,7 @@ namespace SmartWaiver.Net.Tests
                 smartWaiver.Waiver.GetAutoTaggedWaiverUrl(waiverGUID, autoTag));
         }
 
-        [Fact]
+        [Fact(Skip = "Account needed, cannot run with GH Actions")]
         public void GetTemplates()
         {
             ISmartWaiver smartWaiver = new SmartWaiver(_apiKey);
@@ -32,7 +32,7 @@ namespace SmartWaiver.Net.Tests
             Assert.Null(exception);
         }
 
-        [Fact]
+        [Fact(Skip = "Account needed, cannot run with GH Actions")]
         public void PrefillTemplate()
         {
             ISmartWaiver smartWaiver = new SmartWaiver(_apiKey);
@@ -86,7 +86,7 @@ namespace SmartWaiver.Net.Tests
             Assert.Null(exception);
         }
 
-        [Fact]
+        [Fact(Skip = "Account needed, cannot run with GH Actions")]
         public void GetWaiver()
         {
             string waiverID = "XmxzAWtVX6BBqNdcZtknyj";
@@ -96,7 +96,7 @@ namespace SmartWaiver.Net.Tests
             Assert.Null(exception);
         }
 
-        [Fact]
+        [Fact(Skip = "Account needed, cannot run with GH Actions")]
         public void GetWaivers()
         {
             ISmartWaiver smartWaiver = new SmartWaiver(_apiKey);
@@ -104,7 +104,7 @@ namespace SmartWaiver.Net.Tests
             Assert.Null(exception);
         }
 
-        [Fact]
+        [Fact(Skip = "Account needed, cannot run with GH Actions")]
         public void GetSignedWaivers()
         {
             ISmartWaiver smartWaiver = new SmartWaiver(_apiKey);
