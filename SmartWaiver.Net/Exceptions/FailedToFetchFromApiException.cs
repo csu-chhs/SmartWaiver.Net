@@ -1,5 +1,3 @@
-using System;
-
 namespace SmartWaiver.Net.Exceptions
 {
     public class FailedToFetchFromAPIException : Exception

@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace SmartWaiver.Net.Objects
+﻿namespace SmartWaiver.Net.Objects
 {
     public class SignedWaiver : ResponseBase
     {

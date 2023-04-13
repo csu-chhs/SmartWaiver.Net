@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-
-namespace SmartWaiver.Net.Objects
+﻿namespace SmartWaiver.Net.Objects
 {
     public class Waiver
     {
@@ -88,7 +84,7 @@ namespace SmartWaiver.Net.Objects
         /// <summary>
         /// Any custom waiver fields on the waiver
         /// </summary>
-        public Dictionary<string, CustomWaiverField> CustomerWaiverFields { get; set; }
+        public Dictionary<string, GUID> CustomWaiverFields { get; set; }
         /// <summary>
         /// If there are only minors on the waiver, this field contains the guardian information, otherwise it will be null
         /// </summary>

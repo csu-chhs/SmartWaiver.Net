@@ -12,6 +12,7 @@ namespace SmartWaiver.Net
         private readonly string _waiverBase = "https://waiver.smartwaiver.com/";
 
         public IWaiverClient Waiver {get;}
+        public ITemplateClient Template { get; }
         
         public SmartWaiver(string apiKey)
         {
@@ -20,6 +21,7 @@ namespace SmartWaiver.Net
                 configureSerialization: s => s.UseNewtonsoftJson());
             client.AddDefaultHeader("sw-api-key", _apiKey);
             Waiver = new WaiverClient(client, _waiverBase);
+            Template = new TemplateClient(client);
         }
     }
 }
