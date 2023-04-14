@@ -9,14 +9,14 @@
     <PackageId>SmartWaiver.Net</PackageId>
     <PackageDescription>Smart Waiver Client Library</PackageDescription>
     <RepositoryUrl>https://github.com/csu-chhs/SmartWaiver.Net</RepositoryUrl>
-    <Version>1.1.8</Version>
+    <Version>1.1.9</Version>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.1.0"/>
-    <PackageReference Include="RestSharp" Version="110.1.0" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0"/>
+    <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 	<ItemGroup>
         <None Include="../README.md" Pack="true" PackagePath="\"/>
