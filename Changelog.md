@@ -1,3 +1,6 @@
+### 1.1.10
+- Integrate changes from https://github.com/csu-chhs/SmartWaiver.Net/pull/88
+
 ### 1.1.9
 - Bump Rest Sharp 110.2.0
 
