@@ -64,11 +64,11 @@ namespace SmartWaiver.Net.Clients
             }
             if (fromDts != null)
             {
-                request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+                request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
             }
             if (toDts != null)
             {
-                request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:ss.zzz"));
+                request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
             }
             if (firstName != null)
             {

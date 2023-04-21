@@ -43,7 +43,7 @@ namespace SmartWaiver.Net.Objects
         [JsonProperty(PropertyName = "driversLicenseNumber")]
         public string DriversLicenseNumber { get; set; }
         [JsonProperty(PropertyName = "customWaiverFields")]
-        public List<CustomWaiverField> CustomWaiverFields { get; set; }
+        public Dictionary<string, string> CustomWaiverFields { get; set; }
 
     }
 }

@@ -55,7 +55,7 @@ namespace SmartWaiver.Net.Objects
         /// Any custom participant fields on the waiver
         /// </summary>
         [JsonProperty(PropertyName = "customParticipantFields")]
-        public CustomParticipantField CustomParticipantFields { get; set; }
+        public Dictionary<string, GUID> CustomParticipantFields { get; set; }
         /// <summary>
         /// A list of flags for this participant
         /// </summary>
