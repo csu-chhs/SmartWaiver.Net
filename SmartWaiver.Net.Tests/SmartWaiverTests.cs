@@ -48,13 +48,13 @@ namespace SmartWaiver.Net.Tests
                 AnyoneElseHidden = false,
                 Participants = new List<Participant>
                 {
-                    new Participant() 
-                    { 
-                        FirstName = "John", 
-                        LastName = "Doe", 
+                    new Participant()
+                    {
+                        FirstName = "John",
+                        LastName = "Doe",
                         Phone = "1-417-577-1884",
                         Gender = "male", // Case-senstive!
-                        DOB = new DateTime(1969, 4, 1) 
+                        DOB = new DateTime(1969, 4, 1)
                     }
                 },
                 // Guardian not working
@@ -68,8 +68,9 @@ namespace SmartWaiver.Net.Tests
                     Gender = "male", // Case-senstive!
                     DOB = new DateTime(1939, 1, 1)
                 },
-                AddressLineOne = "1 Main Street",
-                AddressLineTwo = "Springfield",
+                AddressLineOne = "1",
+                AddressLineTwo = "Main Street";
+                AddressCity = "Springfield",
                 AddressState = "MO",
                 AddressCountry = "US",
                 AddressZip = "80085",
