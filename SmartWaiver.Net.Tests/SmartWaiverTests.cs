@@ -69,7 +69,7 @@ namespace SmartWaiver.Net.Tests
                     DOB = new DateTime(1939, 1, 1)
                 },
                 AddressLineOne = "1",
-                AddressLineTwo = "Main Street";
+                AddressLineTwo = "Main Street",
                 AddressCity = "Springfield",
                 AddressState = "MO",
                 AddressCountry = "US",
