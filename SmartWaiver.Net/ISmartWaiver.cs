@@ -7,5 +7,7 @@ namespace SmartWaiver.Net
         IWaiverClient Waiver {get;}
 
         ITemplateClient Template { get;}
+
+        ISearchClient Search { get; }
     }
 }
