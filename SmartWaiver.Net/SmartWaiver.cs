@@ -24,6 +24,7 @@ namespace SmartWaiver.Net
             client.AddDefaultHeader("sw-api-key", _apiKey);
             Waiver = new WaiverClient(client, _waiverBase);
             Template = new TemplateClient(client);
+            Search = new SearchClient(client);
         }
     }
 }

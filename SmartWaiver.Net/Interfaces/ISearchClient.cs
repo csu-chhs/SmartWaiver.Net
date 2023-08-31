@@ -4,8 +4,8 @@ namespace SmartWaiver.Net.Interfaces
 {
     public interface ISearchClient
     {
-        SearchResponse Search(string templateId, DateTime? fromDts, DateTime? toDts, string firstName, string lastName, bool? verified, string sort, string tag);
+        SearchResponse Search(string templateId = null, DateTime? fromDts = null, DateTime? toDts = null, string firstName = null, string lastName = null, bool? verified = null, string sort = null, string tag = null);
 
-        SearchResultsResponse GetSearch(string guid, int page, bool? pdf);
+        Task<SearchResultsResponse> GetSearchAsync(string guid, int page = 0, bool? pdf = false);
     }
 }

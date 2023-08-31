@@ -10,14 +10,12 @@ namespace SmartWaiver.Net.Clients
         private readonly RestClient _client;
         private readonly string _waiverBase;
 
-        public SearchClient(RestClient client,
-            string waiverBase)
+        public SearchClient(RestClient client)
         {
             _client = client;
-            _waiverBase = waiverBase;
         }
 
-        public SearchResponse Search(string templateId, DateTime? fromDts, DateTime? toDts, string firstName, string lastName, bool? verified, string sort, string tag)
+        public SearchResponse Search(string templateId = null, DateTime? fromDts = null, DateTime? toDts = null, string firstName = null, string lastName = null, bool? verified = null, string sort = null, string tag = null)
         {
             var request = new RestRequest("v4/search");
 
@@ -105,19 +103,19 @@ namespace SmartWaiver.Net.Clients
             throw ex;
         }
 
-        public SearchResultsResponse GetSearch(string guid, int page = 0, bool? pdf = false)
+        public async Task<SearchResultsResponse> GetSearchAsync(string guid, int page = 0, bool? pdf = false)
         {
             var request = new RestRequest("v4/search/{guid}/results");
 
             request.AddUrlSegment("guid", guid);
 
-            request.AddParameter("Page", page);
+            request.AddParameter("page", page);
 
             if(pdf != null)
             {
-                request.AddParameter("Pdf", pdf.ToString());
+                request.AddParameter("pdf", pdf.ToString().ToLower());
             }
-            var response = _client.ExecuteAsync<SearchResultsResponse>(request).Result;
+            var response = await _client.ExecuteAsync<SearchResultsResponse>(request);
 
             if (response.IsSuccessful)
             {
