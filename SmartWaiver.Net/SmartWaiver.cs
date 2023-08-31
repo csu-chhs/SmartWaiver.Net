@@ -13,6 +13,8 @@ namespace SmartWaiver.Net
 
         public IWaiverClient Waiver {get;}
         public ITemplateClient Template { get; }
+
+        public ISearchClient Search { get; }
         
         public SmartWaiver(string apiKey)
         {

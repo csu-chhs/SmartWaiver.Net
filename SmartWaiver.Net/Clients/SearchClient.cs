@@ -47,7 +47,7 @@ namespace SmartWaiver.Net.Clients
 
             if(verified != null)
             {
-                request.AddParameter("verified", verified);
+                request.AddParameter("verified", verified.ToString());
             }
 
             if(sort !=null)
@@ -75,11 +75,11 @@ namespace SmartWaiver.Net.Clients
             }
             if(fromDts != null)
             {
-                ex.Data.Add("From Dts", fromDts.ToShortDateString());
+                ex.Data.Add("From Dts", fromDts);
             }
             if(toDts != null)
             {
-                ex.Data.Add("To Dts", toDts.ToShortDateString());
+                ex.Data.Add("To Dts", toDts);
             }
             if(firstName != null)
             {
@@ -105,17 +105,17 @@ namespace SmartWaiver.Net.Clients
             throw ex;
         }
 
-        public SearchResultsResponse GetSearch(string guid, int page = 0, bool? Pdf)
+        public SearchResultsResponse GetSearch(string guid, int page = 0, bool? pdf = false)
         {
             var request = new RestRequest("v4/search/{guid}/results");
 
             request.AddUrlSegment("guid", guid);
 
-            ex.Data.Add("Page", page);
+            request.AddParameter("Page", page);
 
             if(pdf != null)
             {
-                ex.Data.Add("Pdf", pdf);
+                request.AddParameter("Pdf", pdf.ToString());
             }
             var response = _client.ExecuteAsync<SearchResultsResponse>(request).Result;
 

@@ -2,7 +2,7 @@ namespace SmartWaiver.Net.Objects
 {
     public class SearchResults
     {
-        public void SearchResults()
+        public SearchResults()
         {
 
         }
@@ -15,7 +15,7 @@ namespace SmartWaiver.Net.Objects
         public bool Expired { get; set; }
         public bool Verfified { get; set; }
         public bool Kiosk { get; set; }
-        public string FirstName  get; set; }
+        public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public DateTime DoB { get; set; }
@@ -23,7 +23,7 @@ namespace SmartWaiver.Net.Objects
         public string AutoTag { get; set; }
         public string ClientIP { get; set; }
         public string[] Tags { get; set; }
-        public Flag[] Flags get; set; }
+        public Flag[] Flags { get; set; }
         public int Photos { get; set; }
         public Participant[] Participants { get; set; }
         public string Email { get; set; }
