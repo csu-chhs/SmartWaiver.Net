@@ -22,6 +22,8 @@ namespace SmartWaiver.Net.Objects
         public string AddressLineOne { get; set; }
         [JsonProperty(PropertyName = "addressLineTwo")] 
         public string AddressLineTwo { get; set;}
+        [JsonProperty(PropertyName = "addressCity")]
+        public string AddressCity { get; set; }
         [JsonProperty(PropertyName = "addressCountry")]
         public string AddressCountry { get; set; }
         [JsonProperty(PropertyName = "addressState")]

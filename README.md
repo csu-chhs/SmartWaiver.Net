@@ -5,6 +5,7 @@ Specifically, this library allows you
 to fetch data on signed waivers and create auto
 tagged links for waivers.
 
+[API Documentation](https://apps.chhs.colostate.edu/docs/smartwaiver/api/index.html)
 
 ### Basic Usage
 
