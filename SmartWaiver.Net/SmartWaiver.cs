@@ -13,6 +13,8 @@ namespace SmartWaiver.Net
 
         public IWaiverClient Waiver {get;}
         public ITemplateClient Template { get; }
+
+        public ISearchClient Search { get; }
         
         public SmartWaiver(string apiKey)
         {
@@ -22,6 +24,7 @@ namespace SmartWaiver.Net
             client.AddDefaultHeader("sw-api-key", _apiKey);
             Waiver = new WaiverClient(client, _waiverBase);
             Template = new TemplateClient(client);
+            Search = new SearchClient(client);
         }
     }
 }
