@@ -44,7 +44,7 @@ namespace SmartWaiver.Net.Clients
 
             if (verified != null)
             {
-                request.AddParameter("verified", verified.ToString());
+                request.AddParameter("verified", verified.ToString().ToLower());
             }
 
             if (sort != null)
