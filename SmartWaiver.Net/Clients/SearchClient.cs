@@ -125,6 +125,9 @@ namespace SmartWaiver.Net.Clients
 
             ex.Data.Add("Guid", guid);
             ex.Data.Add("Page", page);
+            var retryAfter = response.Headers.FirstOrDefault(fod => fod.Name == "Retry-After");
+            if (retryAfter != null)
+                ex.Data.Add("Retry after", retryAfter.Value);
             if (pdf != null)
             {
                 ex.Data.Add("Pdf", pdf);

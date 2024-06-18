@@ -37,11 +37,14 @@ namespace SmartWaiver.Net.Clients
             if (response.IsSuccessful)
             {
                 return response.Data;
-            }
+            } 
 
             var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
                 response.ErrorException);
             ex.Data.Add("Waiver Id", waiverId);
+            var retryAfter = response.Headers.FirstOrDefault(fod=>fod.Name=="Retry-After");
+            if(retryAfter != null)
+                ex.Data.Add("Retry after", retryAfter.Value);
             ex.AddWebTrace(response.Content);
             throw ex;
         }
@@ -148,6 +151,9 @@ namespace SmartWaiver.Net.Clients
             var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
                 response.ErrorException);
             ex.Data.Add("Waiver Id", waiverId);
+            var retryAfter = response.Headers.FirstOrDefault(fod => fod.Name == "Retry-After");
+            if (retryAfter != null)
+                ex.Data.Add("Retry after", retryAfter.Value);
             ex.AddWebTrace(response.Content);
             throw ex;
         }
