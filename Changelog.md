@@ -1,3 +1,6 @@
+### 1.3.0
+- Pass on Retry after value in event of Too Many Requests rate limit @catapedamania
+
 ### 1.1.10
 - Integrate changes from https://github.com/csu-chhs/SmartWaiver.Net/pull/88
 
