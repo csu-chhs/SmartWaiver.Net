@@ -1,3 +1,6 @@
+### 1.4.0
+- Bump Rest Sharp to 111.3.0
+
 ### 1.3.0
 - Pass on Retry after value in event of Too Many Requests rate limit @catapedamania
 
