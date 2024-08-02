@@ -1,3 +1,6 @@
+### 1.4.1
+- Bump rest sharp to 111.*
+
 ### 1.4.0
 - Bump Rest Sharp to 111.3.0
 
