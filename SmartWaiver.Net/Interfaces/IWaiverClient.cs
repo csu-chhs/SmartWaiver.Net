@@ -59,5 +59,26 @@ namespace SmartWaiver.Net.Interfaces
         /// <param name="offset">Offset to be combined with limit to page results.Default value: 0 Allowed values 0-1000</param>
         /// <returns></returns>
         WaiverCheckins GetWaiverCheckins(DateTime fromDts, DateTime toDts, int? limit = null, int? offset = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        WaiverFiles GetWaiverFiles(string waiverId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        WaiverPhotos GetWaiverPhotos(string waiverId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        WaiverSignatures GetWaiverSignatures(string waiverId);
     }
 }

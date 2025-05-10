@@ -7,7 +7,7 @@
         /// <summary>
         /// API version number
         /// </summary>
-        public string Version { get; set; }
+        public int Version { get; set; }
         /// <summary>
         /// Uuid for request (32 characters)
         /// </summary>

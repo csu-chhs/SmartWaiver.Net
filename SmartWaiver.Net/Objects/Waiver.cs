@@ -158,7 +158,7 @@
         /// A Base 64 encoded string of the PDF document
         /// </summary>
 
-        public byte[] Pdf { get; set; }
+        public string Pdf { get; set; }
 
     }
 }

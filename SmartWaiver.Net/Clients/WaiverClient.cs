@@ -201,5 +201,71 @@ namespace SmartWaiver.Net.Clients
             ex.AddWebTrace(response.Content);
             throw ex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        public WaiverFiles GetWaiverFiles(string waiverId)
+        {
+            var request = new RestRequest("v4/waivers/{id}/files");
+            request.AddUrlSegment("id", waiverId);
+
+            var response = _client.ExecuteAsync<WaiverFiles>(request).Result;
+
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver files", response.ErrorException);
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        public WaiverPhotos GetWaiverPhotos(string waiverId)
+        {
+            var request = new RestRequest("v4/waivers/{id}/photos");
+            request.AddUrlSegment("id", waiverId);
+
+            var response = _client.ExecuteAsync<WaiverPhotos>(request).Result;
+
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver photos", response.ErrorException);
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waiverId"></param>
+        /// <returns></returns>
+        public WaiverSignatures GetWaiverSignatures(string waiverId)
+        {
+            var request = new RestRequest("v4/waivers/{id}/signatures");
+            request.AddUrlSegment("id", waiverId);
+
+            var response = _client.ExecuteAsync<WaiverSignatures>(request).Result;
+
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver signatures", response.ErrorException);
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
     }
 }

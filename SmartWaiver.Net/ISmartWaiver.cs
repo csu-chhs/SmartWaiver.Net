@@ -9,5 +9,9 @@ namespace SmartWaiver.Net
         ITemplateClient Template { get;}
 
         ISearchClient Search { get; }
+
+        ISmsClient Sms { get; }
+
+        IWebhookQueueClient WebhookQueue { get; }
     }
 }
