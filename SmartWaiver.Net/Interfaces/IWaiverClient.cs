@@ -59,5 +59,12 @@ namespace SmartWaiver.Net.Interfaces
         /// <param name="offset">Offset to be combined with limit to page results.Default value: 0 Allowed values 0-1000</param>
         /// <returns></returns>
         WaiverCheckins GetWaiverCheckins(DateTime fromDts, DateTime toDts, int? limit = null, int? offset = null);
+
+        /// <summary>
+        /// Retrieve signatures for a waiver 
+        /// </summary>
+        /// <param name="waiverId">Unique ID of signed waiver./param>
+        /// <returns></returns>
+        Task<WaiverSignatures> GetWaiverSignaturesAsync(string waiverId);
     }
 }
