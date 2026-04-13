@@ -2,9 +2,9 @@
 {
     public class BodySignatures
     {
-        public string[] participants { get; set; }
-        public string[] guardian { get; set; }
-        public string[] bodySignatures { get; set; }
-        public string[] bodyInitials { get; set; }
+        public List<string> participants { get; set; }
+        public List<string> guardian { get; set; }
+        public List<string> bodySignatures { get; set; }
+        public List<string> bodyInitials { get; set; }
     }
 }

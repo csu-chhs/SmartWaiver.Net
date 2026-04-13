@@ -5,6 +5,5 @@
         public WaiverSignatures() { }
 
         public Signatures signatures { get; set; }
-
     }
 }
