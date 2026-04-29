@@ -1,4 +1,4 @@
-### 1.5.0
+### 1.6.0
 - Integrate changes from https://github.com/csu-chhs/SmartWaiver.Net/pull/173
 
 ### 1.4.1
