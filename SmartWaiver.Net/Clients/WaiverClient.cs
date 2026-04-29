@@ -37,13 +37,13 @@ namespace SmartWaiver.Net.Clients
             if (response.IsSuccessful)
             {
                 return response.Data;
-            } 
+            }
 
             var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver {waiverId}",
                 response.ErrorException);
             ex.Data.Add("Waiver Id", waiverId);
-            var retryAfter = response.Headers.FirstOrDefault(fod=>fod.Name=="Retry-After");
-            if(retryAfter != null)
+            var retryAfter = response.Headers.FirstOrDefault(fod => fod.Name == "Retry-After");
+            if (retryAfter != null)
                 ex.Data.Add("Retry after", retryAfter.Value);
             ex.AddWebTrace(response.Content);
             throw ex;
@@ -143,7 +143,7 @@ namespace SmartWaiver.Net.Clients
 
             var response = await _client.ExecuteAsync<SignedWaiver>(request);
 
-            if(response.IsSuccessful)
+            if (response.IsSuccessful)
             {
                 return response.Data;
             }
@@ -163,11 +163,11 @@ namespace SmartWaiver.Net.Clients
             var request = new RestRequest("v4/checkins");
 
             request.AddParameter("fromDts", ((DateTime)fromDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
-            if(toDts.Date == DateTime.Today && toDts.TimeOfDay == TimeSpan.MinValue)
+            if (toDts.Date == DateTime.Today && toDts.TimeOfDay == TimeSpan.MinValue)
             {
                 toDts = toDts.AddHours(DateTime.Now.Hour);
             }
-            request.AddParameter("toDts", ((DateTime) toDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
+            request.AddParameter("toDts", ((DateTime)toDts).ToString("yyyy-MM-ddTHH:mm:sszzz"));
             if (limit != null)
             {
                 request.AddParameter("limit", limit.ToString());
@@ -186,7 +186,7 @@ namespace SmartWaiver.Net.Clients
 
             var ex = new FailedToFetchFromAPIException($"Failed to fetch waiver list", response.ErrorException);
 
-            ex.Data.Add("fromDts",fromDts);
+            ex.Data.Add("fromDts", fromDts);
             ex.Data.Add("toDts", fromDts);
 
             if (limit != null)
@@ -198,6 +198,24 @@ namespace SmartWaiver.Net.Clients
                 ex.Data.Add("offset", offset);
             }
 
+            ex.AddWebTrace(response.Content);
+            throw ex;
+        }
+
+        public async Task<WaiverSignatures> GetWaiverSignaturesAsync(string waiverId)
+        {
+            var request = new RestRequest("v4/waivers/{id}/signatures");
+            request.AddUrlSegment("id", waiverId);
+            var response = await _client.ExecuteAsync<WaiverSignatures>(request);
+            if (response.IsSuccessful)
+            {
+                return response.Data;
+            }
+            var ex = new FailedToFetchFromAPIException($"Failed to fetch signatures for waiver {waiverId}", response.ErrorException);
+            ex.Data.Add("Waiver Id", waiverId);
+            var retryAfter = response.Headers.FirstOrDefault(fod => fod.Name == "Retry-After");
+            if (retryAfter != null)
+                ex.Data.Add("Retry after", retryAfter.Value);
             ex.AddWebTrace(response.Content);
             throw ex;
         }
