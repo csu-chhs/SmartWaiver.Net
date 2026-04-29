@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="112.*"/>
-    <PackageReference Include="RestSharp" Version="112.*" />
+    <PackageReference Include="RestSharp" Version="114.*" />
   </ItemGroup>
 	<ItemGroup>
         <None Include="../README.md" Pack="true" PackagePath="\"/>
